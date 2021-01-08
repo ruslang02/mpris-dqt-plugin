@@ -4,7 +4,6 @@ export type PlayerInfo = {
   album: string;
   duration: number;
   current: number;
-  art: string;
   id: string;
   state: string;
   bitrate: number;

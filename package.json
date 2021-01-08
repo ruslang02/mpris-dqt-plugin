@@ -1,6 +1,6 @@
 {
   "name": "mpris-dqt-plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "DiscordQt plugin which streams currently playing music into Discord Rich Presence.",
   "keywords": [
     "discord-qt",
