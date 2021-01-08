@@ -26,10 +26,13 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Upload built plugin
-        uses: actions/upload-artifact@v2
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Plugin
-          path: |
-            dist/
-            package.json
+          tag_name: v${{ steps.package-version.outputs.current-version}}
+          release_name: mpris-dqt-plugin v${{ steps.package-version.outputs.current-version}}
